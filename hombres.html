@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- importando api de google maps-->
+
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+$( function() {
+  $( "#accordion" ).accordion();
+} );
+</script>
+<script>
+$( function() {
+  var state = true;
+  $( "#button" ).on( "click", function() {
+    if ( state ) {
+      $( "#effect" ).animate({
+        backgroundColor: "#7ea2d1",
+        color: "#fff",
+        width: 500
+      }, 1000 );
+    } else {
+      $( "#effect" ).animate({
+        backgroundColor: "#fff",
+        color: "#7ea2d1",
+        width: 240
+      }, 1000 );
+    }
+    state = !state;
+  });
+} );
+
+
+</script>
+
+
+<style>
+  body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Cambiado a un gris más claro */
+        }
+  .contenedor {
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .cuadro {
+            width: 250px;
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .cuadro img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+     footer {
+         background-color: #333;
+         color: #fff;
+         text-align: center;
+         padding: 20px 0;
+         bottom: 0;
+         width: 100%;
+     }
+
+     footer p {
+         margin: 0;
+     }
+
+     .company-info {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         flex-wrap: wrap;
+     }
+
+     .company-info div {
+         max-width: 300px;
+         margin-bottom: 10px;
+     }
+
+     .company-info img {
+         max-width: 100%;
+         height: auto;
+     }
+
+		 .navbar {
+						background-color: #333; /* Fondo negro-gris para la barra de navegación */
+				}
+
+				.navbar-nav .nav-link {
+						text-align=left;
+						color: #fff; /* Texto en color blanco */
+				}
+
+				.navbar-nav .nav-link:hover {
+						color: #ccc; /* Cambia de color al pasar el ratón sobre los enlaces */
+				}
+
+				.container {
+						margin-top: 20px; /* Espacio superior para separar la barra de navegación del contenido */
+				}
+		</style>
+
+		</head>
+		<body>
+
+		<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container-fluid">
+				<img src="https://www.pasionbiker.com/wp-content/uploads/2016/05/millenialls-harley-davidson.jpg" height="150px" width="300px" alt="Descripción de la imagen" href="<?php echo site_url();?>">
+				<div class="collapse navbar-collapse">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+								<li class="nav-item">
+										<a class="nav-link" href="index.html">INICIO</a>
+								</li>
+								<li class="nav-item">
+										<a class="nav-link" href="hombres.html">HOMBRES</a>
+								</li>
+								<li class="nav-item">
+										<a class="nav-link" href="mujeres.html">MUJERES</a>
+								</li>
+								<li class="nav-item">
+										<a class="nav-link" href="piezas.html">PIEZAS</a>
+								</li>
+								<li class="nav-item">
+										<a class="nav-link" href="contactos.html">CONTACTOS</a>
+								</li>
+						</ul>
+				</div>
+		</div>
+		</nav>
+
+
+
+<link rel="stylesheet" type="text/css" href="assets/css">
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <br>
+
+    <img src="https://www.harley-davidson.com/content/dam/h-d/images/category-images/2022/media-card/m-emea-new-mc.jpg?impolicy=myresize&rw=800" width="800px" height="300" );
+
+    </div>
+  </div>
+</div>
+
+<div class="contenedor">
+    <!-- Parte Superior -->
+    <div class="cuadro">
+        <img src="https://www.harley-davidson.com/content/dam/h-d/images/category-images/2022/hero-cards-4-up/m-emea-fc-sweatshirt-hc4.jpg?impolicy=myresize&rw=300">
+        <h3>SUDADERAS CON Y SIN CAPUCHA</h3>
+
+        <a href="https://www.harley-davidson.com/la/es/shop/c/mens-sweatshirts-and-fleece?format=json;i=1;locale=es_LA;q1=mens-motorcycle-clothes;q2=mens-sweatshirts-and-fleece;sp_cs=UTF-8;x1=primaryCategoryCode;x2=superCategoryCodes">Enlace </a>
+    </div>
+
+    <div class="cuadro">
+        <img src="https://www.harley-davidson.com/content/dam/h-d/images/category-images/2022/hero-cards-4-up/m-emea-fc-hat-hc4.jpg?impolicy=myresize&rw=300">
+        <h3>GORRAS Y GORROS</h3>
+
+        <a href="https://www.harley-davidson.com/la/es/shop/c/mens-motorcycle-hats-and-caps?format=json;i=1;locale=es_LA;q1=mens-motorcycle-clothes;q2=mens-motorcycle-hats-and-caps;sp_cs=UTF-8;x1=primaryCategoryCode;x2=superCategoryCodes">Enlace </a>
+    </div>
+
+    <div class="cuadro">
+        <img src="https://www.harley-davidson.com/content/dam/h-d/images/category-images/2022/hero-cards-4-up/m-emea-fc-jeans-hc4.jpg?impolicy=myresize&rw=300">
+        <h3>JEANS Y PANTALONES</h3>
+
+        <a href="https://www.harley-davidson.com/la/es/shop/c/mens-motorcycle-jeans?format=json;i=1;locale=es_LA;q1=mens-motorcycle-clothes;q2=mens-motorcycle-jeans;sp_cs=UTF-8;x1=primaryCategoryCode;x2=superCategoryCodes">Enlace </a>
+    </div>
+
+    <!-- Parte Inferior -->
+    <div class="cuadro">
+        <img src="https://www.harley-davidson.com/content/dam/h-d/images/category-images/2022/hero-cards-4-up/m-emea-fc-gloves-hc4.jpg?impolicy=myresize&rw=300">
+        <h3>GUANTES PARA MOOCICLISTA</h3>
+
+        <a href="https://www.harley-davidson.com/la/es/shop/c/mens-motorcycle-gloves">Enlace </a>
+    </div>
+
+
+</div>
+
+<div class="toggler">
+  <div id="effect" class="ui-widget-content ui-corner-all">
+    <h4 class="ui-widget-header ui-corner-all"></h4>
+    <p>
+      Colección FXRG™
+
+El diseño de la Colección FXRG™ está pensado para los motociclistas de touring
+más exigentes. Este equipo de primer nivel ha sido ampliamente probado en la
+carretera e incorpora tecnologías, materiales y diseños innovadores.
+Cuenta con un sistema completo que incluye capas base y medias para lograr una
+comodidad y una versatilidad personalizables de la cabeza a los pies,
+en cualquier entorno de conducción.
+    </p>
+  </div>
+</div>
+
+<button id="button" class="ui-state-default ui-corner-all">EFECTO</button>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="company-info">
+            <div>
+                <img src="harley-davidson-logo.png" alt="Harley Davidson Logo">
+            </div>
+            <div>
+                <p>Harley Davidson</p>
+                <p>Dirección: 123 Main Street, Ciudad</p>
+                <p>Teléfono: (555) 123-4567</p>
+                <p>Email: info@harleydavidson.com</p>
+            </div>
+        </div>
+        <p>&copy; 2023 Harley Davidson. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

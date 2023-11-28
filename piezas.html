@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- importando api de google maps-->
+
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+$( function() {
+  $( "#tabs" ).tabs();
+} );
+</script>
+
+
+<style>
+  body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Cambiado a un gris más claro */
+        }
+
+  .contenedor {
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .cuadro {
+            width: 250px;
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .cuadro img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+     footer {
+         background-color: #333;
+         color: #fff;
+         text-align: center;
+         padding: 20px 0;
+         bottom: 0;
+         width: 100%;
+     }
+
+     footer p {
+         margin: 0;
+     }
+
+     .company-info {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         flex-wrap: wrap;
+     }
+
+     .company-info div {
+         max-width: 300px;
+         margin-bottom: 10px;
+     }
+
+     .company-info img {
+         max-width: 100%;
+         height: auto;
+     }
+		 .navbar {
+	 				 background-color: #333; /* Fondo negro-gris para la barra de navegación */
+	 		 }
+
+	 		 .navbar-nav .nav-link {
+	 				 text-align=left;
+	 				 color: #fff; /* Texto en color blanco */
+	 		 }
+
+	 		 .navbar-nav .nav-link:hover {
+	 				 color: #ccc; /* Cambia de color al pasar el ratón sobre los enlaces */
+	 		 }
+
+	 		 .container {
+	 				 margin-top: 20px; /* Espacio superior para separar la barra de navegación del contenido */
+	 		 }
+	 </style>
+
+	 </head>
+	 <body>
+
+	  <nav class="navbar navbar-expand-lg navbar-dark">
+	  <div class="container-fluid">
+	 		 <img src="https://www.pasionbiker.com/wp-content/uploads/2016/05/millenialls-harley-davidson.jpg" height="150px" width="300px" alt="Descripción de la imagen" href="<?php echo site_url();?>">
+	 		 <div class="collapse navbar-collapse">
+	 				 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	 						 <li class="nav-item">
+	 								 <a class="nav-link" href="index.html">INICIO</a>
+	 						 </li>
+	 						 <li class="nav-item">
+	 								 <a class="nav-link" href="hombres.html">HOMBRES</a>
+	 						 </li>
+	 						 <li class="nav-item">
+	 								 <a class="nav-link" href="mujeres.html">MUJERES</a>
+	 						 </li>
+	 						 <li class="nav-item">
+	 								 <a class="nav-link" href="piezas.html">PIEZAS</a>
+	 						 </li>
+	 						 <li class="nav-item">
+	 								 <a class="nav-link" href="contactos.html">CONTACTOS</a>
+	 						 </li>
+	 				 </ul>
+	 		 </div>
+	  </div>
+	 </nav>
+
+
+
+<link rel="stylesheet" type="text/css" href="assets/css">
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <br>
+
+    <img src="https://brandemia.org/contenido/subidas/2021/07/harley-davidson-02-1024x576.jpg" width="800px" height="300" );
+
+    </div>
+  </div>
+</div>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">GUARDA CON ESTILO</a></li>
+    <li><a href="#tabs-2">UN ASPECTO QUE COMBINA CON TU ESTILO DE CONDUCCION</a></li>
+    <li><a href="#tabs-3">LA LINEA PERSONALIZADA COMIENZA AQUI</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>Ya sea para viajes largos o para recados rápidos, puedes guardar tus pertenencias de manera segura.</p>
+    <img src="https://www.harley-davidson.com/content/dam/h-d/images/category-images/2023/hero-cards/3-up/p-luggage-hc3.jpg?impolicy=myresize&rw=300">
+
+  </div>
+  <div id="tabs-2">
+    <p>La Adversary Collection en negro anodizado y naranja, ampliada para adaptarse a más modelos, ofrece un aspecto agresivo y mayor rendimiento.</p>
+    <img src="https://www.harley-davidson.com/content/dam/h-d/images/promo-images/2023/hero-card/3-up/adversary-my23-reveas-hero-card-3-up-1x1.jpg?impolicy=myresize&rw=30https://www.harley-davidson.com/content/dam/h-d/images/promo-images/2022/4x3/lithium-battery-4x3.jpg?impolicy=myresize&rw=4000">
+  </div>
+  <div id="tabs-3">
+    <p> Versatilidad que ofrece rendimiento, estilo o touring. Hemos combinado accesorios populares en una sola pieza.  </p>
+      <img src="https://www.harley-davidson.com/content/dam/h-d/images/promo-images/2023/hero-card/3-up/custom-my23-reveas-hero-card-3-up-1x1.jpg?impolicy=myresize&rw=300">
+  </div>
+</div>
+
+<div class="contenedor">
+    <!-- Parte Superior -->
+    <div class="cuadro">
+        <img src="https://www.harley-davidson.com/content/dam/h-d/images/promo-images/2022/4x3/audio-4x3.jpg?impolicy=myresize&rw=400">
+        <h3>TU VIAJE AMPLIFICADO</h3>
+        <p>Los bajos profundos llamarán la atención cuando pases con este kit de subwoofer Harley-Davidson™ Audio con tecnología Rockford Fosgate®.
+        </p>
+        <a href="https://www.harley-davidson.com/la/es/shop/c/motorcycle-audio-equipment?format=json;i=1;locale=es_LA;q1=parts;q2=motorcycle-audio-equipment;sp_cs=UTF-8;x1=primaryCategoryCode;x2=superCategoryCodes">Enlace </a>
+    </div>
+
+    <div class="cuadro">
+        <img src="https://www.harley-davidson.com/content/dam/h-d/images/promo-images/2022/4x3/lithium-battery-4x3.jpg?impolicy=myresize&rw=400">
+        <h3>SUPERCARGADA</h3>
+        <p>Obtén una potencia de arranque inigualable más el doble de vida útil con la batería de litio LiFe de Harley-Davidson™.
+        </p>
+        <a href="https://www.harley-davidson.com/la/es/shop/c/motorcycle-electrical?format=json;i=1;locale=es_LA;q1=parts;q2=motorcycle-electrical;sp_cs=UTF-8;x1=primaryCategoryCode;x2=superCategoryCodes">Enlace </a>
+    </div>
+
+    <div class="cuadro">
+        <img src="https://www.harley-davidson.com/content/dam/h-d/images/category-images/2021/hero-cards-2-up/lighting-hero-card-3.jpg?impolicy=myresize&rw=400">
+        <h3>LUCES LED</h3>
+        <p>Equipar tu motocicleta con luces LED premium la lleva a otro nivel por completo, ya sea con faros delanteros más brillantes y anchos o con un juego de luces underglow.</p>
+        <a href="https://www.harley-davidson.com/la/es/shop/c/motorcycle-lights?format=json;i=1;locale=es_LA;q1=parts;q2=motorcycle-lights;sp_cs=UTF-8;x1=primaryCategoryCode;x2=superCategoryCodes">Enlace </a>
+    </div>
+
+    <!-- Parte Inferior -->
+    <div class="cuadro">
+        <img src="https://www.harley-davidson.com/content/dam/h-d/images/category-images/2020/hero-card/2-up/seats-hero-card-2.jpg?impolicy=myresize&rw=300">
+        <h3>ASIENTO ERGONOMICO</h3>
+        <p>El asiento debe ser ergonómico y cómodo en igual medida. Elige el adecuado para ti y tu pasajero. </p>
+        <a href="https://www.harley-davidson.com/la/es/shop/c/motorcycle-seats-and-backrests?format=json;i=1;locale=es_LA;q1=parts;q2=motorcycle-seats-and-backrests;sp_cs=UTF-8;x1=primaryCategoryCode;x2=superCategoryCodes">Enlace </a>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="company-info">
+            <div>
+                <img src="harley-davidson-logo.png" alt="Harley Davidson Logo">
+            </div>
+            <div>
+                <p>Harley Davidson</p>
+                <p>Dirección: 123 Main Street, Ciudad</p>
+                <p>Teléfono: (555) 123-4567</p>
+                <p>Email: info@harleydavidson.com</p>
+            </div>
+        </div>
+        <p>&copy; 2023 Harley Davidson. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
