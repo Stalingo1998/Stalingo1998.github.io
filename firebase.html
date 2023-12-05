@@ -10,6 +10,38 @@
                 <input type="text" id="edad">
                 <button type="button" onclick="crearRegistro()">CREAR</button>
             </form>
+
+            <script type="module">
+                // Import the functions you need from the SDKs you need
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+                import {getDatabase, ref, push, oonValue, remove} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+                // TODO: Add SDKs for Firebase products that you want to use
+                // https://firebase.google.com/docs/web/setup#available-libraries
+              
+                // Your web app's Firebase configuration
+                const firebaseConfig = {
+                  apiKey: "AIzaSyAn-VXbwUJGCA-uW33pgGtiEFi_mRWLCBI",
+                  authDomain: "conexion-9d3d9.firebaseapp.com",
+                  projectId: "conexion-9d3d9",
+                  storageBucket: "conexion-9d3d9.appspot.com",
+                  messagingSenderId: "256484814322",
+                  appId: "1:256484814322:web:da71d0cad7c68aff1b8f6b"
+                };
+              
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const database  = getDatabase(app);
+
+                window.crearRegistro= funcion(){
+                    const nombre = document.getElementById("nombre").value;
+                    const edad = document.getElementById("edad").value;
+
+                    console.log(nombre,edad);
+                }
+                
+
+
+
         </body>
     </head>
 </html>
