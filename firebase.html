@@ -1,8 +1,12 @@
-<html>
-    <head>
-        <body>
-            <h1>HOLA MUNDOOOOOOOOOO</h1>
-            <form id="crud form">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h3>HOLA MUNDO</h3>
+</head>
+<body>
+    <form id="crud form">
                 <label for="nombre">nombre: </label>
                 <input type="text" id="nombre">
 
@@ -37,11 +41,15 @@
                     const edad = document.getElementById("edad").value;
 
                     console.log(nombre,edad);
+
+                    push(
+                        ref(database, 'septimo'),
+                        {
+                            name:nombre,
+                            age: edad
+                        }
+                    );
                 }
-                
-
-
-
-        </body>
-    </head>
+               </script> 
+</body>
 </html>
