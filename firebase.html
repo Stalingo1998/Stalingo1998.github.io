@@ -1,16 +1,86 @@
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+<style>
+        body {
+            background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with the path to your background image */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    </head>
-    <body>
-        <form id="crud-form">
+        .contenedor {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #4caf50; /* Green background color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+    <div class="contenedor">
+    <h2>FORMULARIO</h2>
+
+
+    <form id="crud-form">
             <label for="nombre">Nombre:</label>
             <input type="text" id = "nombre">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id = "apellido">
             <label for="edad">Edad:</label>
             <input type="number" id = "edad">
+            <label for="direccion">Direccion:</label>
+            <input type="text" id = "direccion">
+            <label for="telefono">Telefono:</label>
+            <input type="number" id = "telefono">
             <button type="button" onclick="crearRegistro()">Crear</button>
+            <button type="button" onclick="editarRegistro()">Editar</button>
+            <button type="button" onclick="eliminarRegistro()">Eliminar</button>
+            <button type="button" onclick="actualizarRegistro()">Actualizar</button>
         </form>
 
+
+</div>
 
         <script type="module">
             // Import the functions you need from the SDKs you need
@@ -18,7 +88,7 @@
             import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
-          
+
             // Your web app's Firebase configuration
             const firebaseConfig = {
               apiKey: "AIzaSyBMJsVpnbOwVOiVNbTZScZdet9qlGigDL0",
@@ -29,7 +99,7 @@
               messagingSenderId: "679910299749",
               appId: "1:679910299749:web:9800b464879628b4850e8c"
             };
-          
+
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const database = getDatabase(app);
@@ -38,12 +108,12 @@
                 const nombre = document.getElementById("nombre").value;
                 const edad = document.getElementById("edad").value;
                 console.log(nombre, edad);
-                
+
                 push(
                     ref(database, 'septimo'),
                     {
                         name: nombre,
-                        age: edad 
+                        age: edad
                     }
                 );
 
