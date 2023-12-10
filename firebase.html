@@ -62,10 +62,14 @@
 
 
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSaaaaaaaa</h2>
+    <h2>FORMULARIO DE UNA PERSONAS</h2>
 
 
     <form id="crud-form">
+
+
+            <label for="idOpciones">ID del Registro </label>
+            <input type="text" id="idOpciones">
             <label for="nombre">Nombre:</label>
             <input type="text" id = "nombre">
             <label for="apellido">Apellido:</label>
@@ -76,12 +80,6 @@
             <input type="text" id = "direccion">
             <label for="telefono">Telefono:</label>
             <input type="number" id = "telefono">
-
-
-
-            <label for="idActualizar">ID del Registro </label>
-            <input type="text" id="idActualizar">
-
             <button type="button" onclick="crearRegistro()">Crear</button>
             <button type="button" onclick="leerRegistro()">Editar</button>
             <button type="button" onclick="actualizarRegistro()">Actualizar</button>
@@ -138,7 +136,7 @@
 
             
             window.actualizarRegistro = function () {
-                const registroId = document.getElementById("idActualizar").value;
+                const registroId = document.getElementById("idOpciones").value;
 
                 if (!registroId) {
                     console.log("Por favor, ingresa un ID válido para actualizar el registro.");
@@ -166,7 +164,7 @@
 
 
             window.eliminarRegistro = function () {
-                const registroId = document.getElementById("idActualizar").value;
+                const registroId = document.getElementById("idOpciones").value;
                 if (!registroId) {
                     console.log("Por favor, ingresa un ID válido para eliminar el registro.");
                     return;
