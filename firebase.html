@@ -62,7 +62,7 @@
 
 
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERS</h2>
+    <h2>FORMULARIO DE UNA PERSaaaaaaaaaaaa</h2>
 
 
     <form id="crud-form">
@@ -130,36 +130,45 @@
 
 
             
-             window.actualizarRegistro = function () {
+            window.actualizarRegistro = function () {
                 const nombreActualizar = document.getElementById("nombre").value;
 
                 const databaseRef = ref(database, 'septimo');
-                const queryRef = orderByChild(databaseRef, 'name');
-                const matchingRecords = equalTo(queryRef, nombreActualizar);
 
-                // Obtén el primer registro coincidente (asumiendo que solo debería haber uno)
-                const registroId = Object.keys(matchingRecords)[0];
+                // Obtén todos los registros
+                onValue(databaseRef, (snapshot) => {
+                    const registros = snapshot.val();
 
-                if (registroId) {
-                    const nombre = document.getElementById("nombre").value;
-                    const apellido = document.getElementById("apellido").value;
-                    const edad = document.getElementById("edad").value;
-                    const direccion = document.getElementById("direccion").value;
-                    const telefono = document.getElementById("telefono").value;
+                    // Busca el registro con el nombre proporcionado
+                    let registroId = null;
+                    for (const key in registros) {
+                        if (registros[key].name === nombreActualizar) {
+                            registroId = key;
+                            break;
+                        }
+                    }
 
-                    const updates = {
-                        name: nombre,
-                        lastname: apellido,
-                        age: edad,
-                        address: direccion,
-                        telephone: telefono
-                    };
+                    if (registroId) {
+                        const nombre = document.getElementById("nombre").value;
+                        const apellido = document.getElementById("apellido").value;
+                        const edad = document.getElementById("edad").value;
+                        const direccion = document.getElementById("direccion").value;
+                        const telefono = document.getElementById("telefono").value;
 
-                    update(ref(database, `septimo/${registroId}`), updates);
-                    console.log("Registro actualizado con éxito.");
-                } else {
-                    console.log("No se encontró ningún registro con ese nombre.");
-                }
+                        const updates = {
+                            name: nombre,
+                            lastname: apellido,
+                            age: edad,
+                            address: direccion,
+                            telephone: telefono
+                        };
+
+                        update(ref(database, `septimo/${registroId}`), updates);
+                        console.log("Registro actualizado con éxito.");
+                    } else {
+                        console.log("No se encontró ningún registro con ese nombre.");
+                    }
+                });
             }
 
 
