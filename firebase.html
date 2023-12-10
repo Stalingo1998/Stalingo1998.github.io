@@ -62,7 +62,7 @@
 
 
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSONA</h2>
+    <h2>FORMULARIO DE UNA PERSONAA</h2>
 
 
     <form id="crud-form">
@@ -153,24 +153,24 @@
 
 
             window.eliminarRegistro = function () {
-                const nombre = document.getElementById("nombre").value;
-                const apellido = document.getElementById("apellido").value;
-                const edad = document.getElementById("edad").value;
-                const direccion = document.getElementById("direccion").value;
-                const telefono = document.getElementById("telefono").value;
-                console.log(nombre, apellido, edad, direccion, telefono);
-                
-                push(
-                    ref(database, 'septimo'),
-                    {
-                        name: nombre,
-                        lastname: apellido,
-                        age: edad,
-                        address:direccion,
-                        telephone:telefono
-                    }
-                );
+                const nombreEliminar = document.getElementById("nombreEliminar").value;
+                console.log("Eliminar registro con nombre:", nombreEliminar);
 
+                const databaseRef = ref(database, 'septimo');
+
+                // Encuentra el registro que coincida con el nombre
+                const query = orderByChild(databaseRef, 'name');
+                const matchingRecord = queryEqualTo(query, nombreEliminar);
+
+                // Elimina el registro encontrado
+                if (matchingRecord) {
+                    const recordKey = Object.keys(matchingRecord)[0];
+                    const recordRef = child(databaseRef, recordKey);
+                    remove(recordRef);
+                    console.log("Registro eliminado con éxito.");
+                } else {
+                    console.log("No se encontró ningún registro con ese nombre.");
+                }
             }
 
 
