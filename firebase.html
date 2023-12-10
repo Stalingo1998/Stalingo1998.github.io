@@ -76,6 +76,9 @@
             <input type="text" id = "direccion">
             <label for="telefono">Telefono:</label>
             <input type="number" id = "telefono">
+
+            <label for="nombreEliminar">Nombre a eliminar:</label>
+            <input type="text" id="nombreEliminar">
             <button type="button" onclick="crearRegistro()">Crear</button>
             <button type="button" onclick="editarRegistro()">Editar</button>
             <button type="button" onclick="eliminarRegistro()">Eliminar</button>
@@ -129,71 +132,28 @@
             }
 
 
-
-            window.editarRegistro = function () {
-                const nombre = document.getElementById("nombre").value;
-                const apellido = document.getElementById("apellido").value;
-                const edad = document.getElementById("edad").value;
-                const direccion = document.getElementById("direccion").value;
-                const telefono = document.getElementById("telefono").value;
-                console.log(nombre, apellido, edad, direccion, telefono);
-                
-                push(
-                    ref(database, 'septimo'),
-                    {
-                        name: nombre,
-                        lastname: apellido,
-                        age: edad,
-                        address:direccion,
-                        telephone:telefono
-                    }
-                );
-
-            }
-
-
             window.eliminarRegistro = function () {
-                const nombreEliminar = document.getElementById("nombreEliminar").value;
-                console.log("Eliminar registro con nombre:", nombreEliminar);
+            const nombreEliminar = document.getElementById("nombreEliminar").value;
+            console.log("Eliminar registro con nombre:", nombreEliminar);
 
-                const databaseRef = ref(database, 'septimo');
+            const databaseRef = ref(database, 'septimo');
 
-                // Encuentra el registro que coincida con el nombre
-                const query = orderByChild(databaseRef, 'nombre');
-                const matchingRecord = queryEqualTo(query, nombreEliminar);
+            // Encuentra el registro que coincida con el nombre
+            const query = orderByChild(databaseRef, 'name');
+            const matchingRecord = queryEqualTo(query, nombreEliminar);
 
-                // Elimina el registro encontrado
-                if (matchingRecord) {
-                    const recordKey = Object.keys(matchingRecord)[0];
-                    const recordRef = child(databaseRef, recordKey);
-                    remove(recordRef);
-                    console.log("Registro eliminado con éxito.");
-                } else {
-                    console.log("No se encontró ningún registro con ese nombre.");
-                }
+            // Elimina el registro encontrado
+            if (matchingRecord) {
+                const recordKey = Object.keys(matchingRecord)[0];
+                const recordRef = child(databaseRef, recordKey);
+                remove(recordRef);
+                console.log("Registro eliminado con éxito.");
+            } else {
+                console.log("No se encontró ningún registro con ese nombre.");
             }
+        }
 
 
-            window.actualizarRegistro = function () {
-                const nombre = document.getElementById("nombre").value;
-                const apellido = document.getElementById("apellido").value;
-                const edad = document.getElementById("edad").value;
-                const direccion = document.getElementById("direccion").value;
-                const telefono = document.getElementById("telefono").value;
-                console.log(nombre, apellido, edad, direccion, telefono);
-                
-                push(
-                    ref(database, 'septimo'),
-                    {
-                        name: nombre,
-                        lastname: apellido,
-                        age: edad,
-                        address:direccion,
-                        telephone:telefono
-                    }
-                );
-
-            }
           </script>
     </body>
 </html>
