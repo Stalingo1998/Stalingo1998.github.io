@@ -138,10 +138,8 @@
 
             const databaseRef = ref(database, 'septimo');
 
-            // Consulta para ordenar por el campo 'name'
-            const query = orderByChild('name');
-
-            // Realizar la consulta
+            // Realizar la consulta ordenada por el campo 'name'
+            const query = orderByChild(ref(databaseRef), 'name');
             const matchingRecords = queryEqualTo(query, nombreEliminar);
 
             // Eliminar los registros encontrados
