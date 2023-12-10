@@ -131,6 +131,7 @@
 
             }
 
+            import { getDatabase, ref, onChildAdded, onChildChanged, onChildRemoved } from "firebase/database";
 
             window.eliminarRegistro = function () {
                 const nombreEliminar = document.getElementById("nombreEliminar").value;
