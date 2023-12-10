@@ -109,14 +109,87 @@
 
             window.crearRegistro = function () {
                 const nombre = document.getElementById("nombre").value;
+                const apellido = document.getElementById("apellido").value;
                 const edad = document.getElementById("edad").value;
-                console.log(nombre, edad);
-
+                const direccion = document.getElementById("direccion").value;
+                const telefono = document.getElementById("telefono").value;
+                console.log(nombre, apellido, edad, direccion, telefono);
+                
                 push(
-                    ref(database, 'informacion'),
+                    ref(database, 'septimo'),
                     {
                         name: nombre,
-                        age: edad
+                        lastname: apellido,
+                        age: edad,
+                        address:direccion,
+                        telephone:telefono
+                    }
+                );
+
+            }
+
+
+
+            window.editarRegistro = function () {
+                const nombre = document.getElementById("nombre").value;
+                const apellido = document.getElementById("apellido").value;
+                const edad = document.getElementById("edad").value;
+                const direccion = document.getElementById("direccion").value;
+                const telefono = document.getElementById("telefono").value;
+                console.log(nombre, apellido, edad, direccion, telefono);
+                
+                push(
+                    ref(database, 'septimo'),
+                    {
+                        name: nombre,
+                        lastname: apellido,
+                        age: edad,
+                        address:direccion,
+                        telephone:telefono
+                    }
+                );
+
+            }
+
+
+            window.eliminarRegistro = function () {
+                const nombre = document.getElementById("nombre").value;
+                const apellido = document.getElementById("apellido").value;
+                const edad = document.getElementById("edad").value;
+                const direccion = document.getElementById("direccion").value;
+                const telefono = document.getElementById("telefono").value;
+                console.log(nombre, apellido, edad, direccion, telefono);
+                
+                push(
+                    ref(database, 'septimo'),
+                    {
+                        name: nombre,
+                        lastname: apellido,
+                        age: edad,
+                        address:direccion,
+                        telephone:telefono
+                    }
+                );
+
+            }
+
+
+            window.actualizarRegistro = function () {
+                const nombre = document.getElementById("nombre").value;
+                const apellido = document.getElementById("apellido").value;
+                const edad = document.getElementById("edad").value;
+                const direccion = document.getElementById("direccion").value;
+                const telefono = document.getElementById("telefono").value;
+                console.log(nombre, apellido, edad, direccion, telefono);
+                
+                push(
+                    ref(database, 'septimo'),
+                    {
+                        name: nombre,
+                        lastname: apellido,
+                        age: edad,
+                        address:direccion,
+                        telephone:telefono
                     }
                 );
 
