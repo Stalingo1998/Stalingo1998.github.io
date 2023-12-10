@@ -62,7 +62,7 @@
 
 
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSONAS</h2>
+    <h2>FORMULARIO DE UNA PERSONASSSSSSSSS</h2>
 
 
     <form id="crud-form">
@@ -132,6 +132,17 @@
                 );
 
             }
+
+
+
+            window.leerRegistros = function () {
+            const databaseRef = ref(database, 'septimo');
+            onValue(databaseRef, (snapshot) => {
+                const data = snapshot.val();
+                console.log("Registros:", data);
+                // Aquí puedes realizar acciones con los datos, como actualizar la interfaz de usuario
+            });
+        }
 
 
             
