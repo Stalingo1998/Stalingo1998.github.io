@@ -62,7 +62,7 @@
 
 
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSONAAAAAAAAAAAA</h2>
+    <h2>FORMULARIO DE UNA PERS</h2>
 
 
     <form id="crud-form">
@@ -130,24 +130,36 @@
 
 
             
-            window.actualizarRegistro = function () {
-                // Supongamos que tienes el ID del registro que deseas actualizar
-                const registroNombre= "NOMBRE_DEL_REGISTRO_A_ACTUALIZAR";
-                const nombre = document.getElementById("nombre").value;
-                const apellido = document.getElementById("apellido").value;
-                const edad = document.getElementById("edad").value;
-                const direccion = document.getElementById("direccion").value;
-                const telefono = document.getElementById("telefono").value;
+             window.actualizarRegistro = function () {
+                const nombreActualizar = document.getElementById("nombre").value;
 
-                const updates = {
-                    name: nombre,
-                    lastname: apellido,
-                    age: edad,
-                    address: direccion,
-                    telephone: telefono
-                };
+                const databaseRef = ref(database, 'septimo');
+                const queryRef = orderByChild(databaseRef, 'name');
+                const matchingRecords = equalTo(queryRef, nombreActualizar);
 
-                update(ref(database, `septimo/${registroNombre}`), updates);
+                // Obtén el primer registro coincidente (asumiendo que solo debería haber uno)
+                const registroId = Object.keys(matchingRecords)[0];
+
+                if (registroId) {
+                    const nombre = document.getElementById("nombre").value;
+                    const apellido = document.getElementById("apellido").value;
+                    const edad = document.getElementById("edad").value;
+                    const direccion = document.getElementById("direccion").value;
+                    const telefono = document.getElementById("telefono").value;
+
+                    const updates = {
+                        name: nombre,
+                        lastname: apellido,
+                        age: edad,
+                        address: direccion,
+                        telephone: telefono
+                    };
+
+                    update(ref(database, `septimo/${registroId}`), updates);
+                    console.log("Registro actualizado con éxito.");
+                } else {
+                    console.log("No se encontró ningún registro con ese nombre.");
+                }
             }
 
 
