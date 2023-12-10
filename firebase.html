@@ -62,7 +62,7 @@
 
 
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSO</h2>
+    <h2>FORMULARIO DE UNA PERSOna</h2>
 
 
     <form id="crud-form">
@@ -138,16 +138,19 @@
 
             const databaseRef = ref(database, 'septimo');
 
-            // Encuentra el registro que coincida con el nombre
-            const query = orderByChild(databaseRef, 'nombre');
-            const matchingRecord = queryEqualTo(query, nombreEliminar);
+            // Consulta para ordenar por el campo 'name'
+            const query = orderByChild('name');
 
-            // Elimina el registro encontrado
-            if (matchingRecord) {
-                const recordKey = Object.keys(matchingRecord)[0];
-                const recordRef = child(databaseRef, recordKey);
-                remove(recordRef);
-                console.log("Registro eliminado con éxito.");
+            // Realizar la consulta
+            const matchingRecords = queryEqualTo(query, nombreEliminar);
+
+            // Eliminar los registros encontrados
+            if (matchingRecords) {
+                Object.keys(matchingRecords).forEach(recordKey => {
+                    const recordRef = child(databaseRef, recordKey);
+                    remove(recordRef);
+                });
+                console.log("Registros eliminados con éxito.");
             } else {
                 console.log("No se encontró ningún registro con ese nombre.");
             }
