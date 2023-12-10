@@ -62,7 +62,7 @@
 
 
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERS</h2>
+    <h2>FORMULARIO DE UNA PERSaaaaaaaa</h2>
 
 
     <form id="crud-form">
@@ -79,13 +79,14 @@
 
 
 
-            <label for="idActualizar">ID del Registro a Actualizar:</label>
+            <label for="idActualizar">ID del Registro </label>
             <input type="text" id="idActualizar">
 
             <button type="button" onclick="crearRegistro()">Crear</button>
-            <button type="button" onclick="editarRegistro()">Editar</button>
-            <button type="button" onclick="eliminarRegistro()">Eliminar</button>
+            <button type="button" onclick="leerRegistro()">Editar</button>
             <button type="button" onclick="actualizarRegistro()">Actualizar</button>
+            <button type="button" onclick="eliminarRegistro()">Eliminar</button>
+            
         </form>
 
 
@@ -160,6 +161,18 @@
 
                 update(ref(database, `septimo/${registroId}`), updates);
                 console.log("Registro actualizado con éxito.");
+            }
+
+
+
+            window.eliminarRegistro = function () {
+                const registroId = document.getElementById("idActualizar").value;
+                if (!registroId) {
+                    console.log("Por favor, ingresa un ID válido para eliminar el registro.");
+                    return;
+                }
+                remove(ref(database, `septimo/${registroId}`));
+                console.log("Registro eliminado con éxito.");
             }
 
 
