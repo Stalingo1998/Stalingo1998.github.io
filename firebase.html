@@ -133,26 +133,24 @@
 
 
             window.eliminarRegistro = function () {
-            const nombreEliminar = document.getElementById("nombreEliminar").value;
-            console.log("Eliminar registro con nombre:", nombreEliminar);
-
-            const databaseRef = ref(database, 'septimo');
-
-            // Realizar la consulta ordenada por el campo 'name'
-            const queryRef = query(databaseRef, orderByChild('name'));
-            const matchingRecords = equalTo(queryRef, nombreEliminar);
-
-            // Eliminar los registros encontrados
-            if (matchingRecords) {
+                const nombreEliminar = document.getElementById("nombreEliminar").value;
+                console.log("Eliminar registro con nombre:", nombreEliminar);
+                const databaseRef = ref(database, 'septimo');
+                // Realizar la consulta ordenada por el campo 'name'
+                const queryRef = query(databaseRef, orderByChild('name'));
+                const matchingRecords = equalTo(queryRef, nombreEliminar);
+                // Eliminar los registros encontrados
+                if (matchingRecords) {
                 Object.keys(matchingRecords).forEach(recordKey => {
-                    const recordRef = ref(databaseRef, recordKey);
-                    remove(recordRef);
-                });
-                console.log("Registros eliminados con éxito.");
-            } else {
-                console.log("No se encontró ningún registro con ese nombre.");
-            }
-        }
+                const recordRef = ref(databaseRef, recordKey);
+                 remove(recordRef);
+                    }
+                );
+        console.log("Registros eliminados con éxito.");
+    } else {
+        console.log("No se encontró ningún registro con ese nombre.");
+    }
+}
 
 
           </script>
