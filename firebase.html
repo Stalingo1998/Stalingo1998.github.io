@@ -62,7 +62,7 @@
 
 
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSONAA</h2>
+    <h2>FORMULARIO DE UNA PERSONA</h2>
 
 
     <form id="crud-form">
@@ -159,7 +159,7 @@
                 const databaseRef = ref(database, 'septimo');
 
                 // Encuentra el registro que coincida con el nombre
-                const query = orderByChild(databaseRef, 'name');
+                const query = orderByChild(databaseRef, 'nombre');
                 const matchingRecord = queryEqualTo(query, nombreEliminar);
 
                 // Elimina el registro encontrado
