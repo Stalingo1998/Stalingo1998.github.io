@@ -59,10 +59,10 @@
         }
     </style>
     <body>
-
+        
 
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSOnaaaaa</h2>
+    <h2>FORMULARIO DE UNA PERSONA</h2>
 
 
     <form id="crud-form">
@@ -91,7 +91,7 @@
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-            import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+            import { getDatabase, ref, push, onValue, remove, onChildAdded, onChildChanged, onChildRemoved } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -131,7 +131,7 @@
 
             }
 
-            import { getDatabase, ref, onChildAdded, onChildChanged, onChildRemoved } from "firebase/database";
+            
 
             window.eliminarRegistro = function () {
                 const nombreEliminar = document.getElementById("nombreEliminar").value;
