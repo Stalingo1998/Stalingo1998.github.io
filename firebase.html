@@ -62,7 +62,7 @@
 
 
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSONAAAAA</h2>
+    <h2>FORMULARIO DE UNA PERSON</h2>
 
 
     <form id="crud-form">
@@ -127,6 +127,29 @@
                 );
 
             }
+
+
+            
+            window.actualizarRegistro = function () {
+                // Supongamos que tienes el ID del registro que deseas actualizar
+                const registroNombre= "NOMBRE_DEL_REGISTRO_A_ACTUALIZAR";
+                const nombre = document.getElementById("nombre").value;
+                const apellido = document.getElementById("apellido").value;
+                const edad = document.getElementById("edad").value;
+                const direccion = document.getElementById("direccion").value;
+                const telefono = document.getElementById("telefono").value;
+
+                const updates = {
+                    name: nombre,
+                    lastname: apellido,
+                    age: edad,
+                    address: direccion,
+                    telephone: telefono
+                };
+
+                update(ref(database, `septimo/${registroNombre}`), updates);
+            }
+
 
           </script>
     </body>
