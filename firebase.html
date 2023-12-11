@@ -17,33 +17,27 @@
             height: 100vh;
             margin: 0;
         }
-
         .contenedor {
             background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-
         h2 {
             text-align: center;
         }
-
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
         label {
             margin-top: 10px;
         }
-
         input {
             margin-bottom: 10px;
             padding: 5px;
         }
-
         button {
             margin-top: 10px;
             padding: 10px;
@@ -60,8 +54,7 @@
     </style>
     <body>
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA moto</h2>
-
+    <h2>FORMULARIO DE UNA PERSONA</h2>
         <form id="crud-form">
             <label for="idOpciones">ID del Registro </label>
             <input type="text" id="idOpciones">
@@ -81,14 +74,12 @@
             <button type="button" onclick="eliminarRegistro()">Eliminar</button>
         </form>
 </div>
-
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
             import { getDatabase, ref, push, onValue, remove, update } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
-
             // Your web app's Firebase configuration
             const firebaseConfig = {
             apiKey: "AIzaSyDRmHSHN1v5yCTgQRiP-u_zXVpg2S8HkeY",
@@ -98,10 +89,7 @@
             storageBucket: "septimo-utc.appspot.com",
             messagingSenderId: "992144357930",
             appId: "1:992144357930:web:f5fde41131d4504c8ca153"
-
             };
-
-
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const database = getDatabase(app);
@@ -113,6 +101,7 @@
                 const telefono = document.getElementById("telefono").value;
                 console.log(nombre, apellido, edad, direccion, telefono);
                 push(
+                    ref(database, 'septimo'),
                     ref(database, 'brandongordon'),
                     {
                         name: nombre,
@@ -125,6 +114,7 @@
             }
 
             window.leerRegistro = function () {
+            const databaseRef = ref(database, 'septimo');
             const databaseRef = ref(database, 'brandongordon');
             onValue(databaseRef, (snapshot) => {
                 const data = snapshot.val();
@@ -134,18 +124,15 @@
             
             window.actualizarRegistro = function () {
                 const registroId = document.getElementById("idOpciones").value;
-
                 if (!registroId) {
                     console.log("Por favor, ingresa un ID válido para actualizar el registro.");
                     return;
                 }
-
                 const nombre = document.getElementById("nombre").value;
                 const apellido = document.getElementById("apellido").value;
                 const edad = document.getElementById("edad").value;
                 const direccion = document.getElementById("direccion").value;
                 const telefono = document.getElementById("telefono").value;
-
                 const updates = {
                     name: nombre,
                     lastname: apellido,
@@ -153,7 +140,8 @@
                     address: direccion,
                     telephone: telefono
                 };
-                update(ref(database, brandongordon/${registroId}), updates);
+                update(ref(database, `septimo/${registroId}`), updates);
+                update(ref(database, `brandongordon/${registroId}`), updates);
                 console.log("Registro actualizado con éxito.");
             }
 
@@ -163,7 +151,8 @@
                     console.log("Por favor, ingresa un ID válido para eliminar el registro.");
                     return;
                 }
-                remove(ref(database, brandongordon/${registroId}));
+                remove(ref(database, `septimo/${registroId}`));
+                remove(ref(database, `brandongordon/${registroId}`));
                 console.log("Registro eliminado con éxito.");
             }
 
