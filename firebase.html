@@ -113,7 +113,7 @@
                 const telefono = document.getElementById("telefono").value;
                 console.log(nombre, apellido, edad, direccion, telefono);
                 push(
-                    ref(database, 'septimo'),
+                    ref(database, 'brandongordon'),
                     {
                         name: nombre,
                         lastname: apellido,
@@ -125,7 +125,7 @@
             }
 
             window.leerRegistro = function () {
-            const databaseRef = ref(database, 'septimo');
+            const databaseRef = ref(database, 'brandongordon');
             onValue(databaseRef, (snapshot) => {
                 const data = snapshot.val();
                 console.log("Registros:", data);
@@ -153,7 +153,7 @@
                     address: direccion,
                     telephone: telefono
                 };
-                update(ref(database, `septimo/${registroId}`), updates);
+                update(ref(database, `brandongordon/${registroId}`), updates);
                 console.log("Registro actualizado con éxito.");
             }
 
@@ -163,7 +163,7 @@
                     console.log("Por favor, ingresa un ID válido para eliminar el registro.");
                     return;
                 }
-                remove(ref(database, `septimo/${registroId}`));
+                remove(ref(database, `brandongordon/${registroId}`));
                 console.log("Registro eliminado con éxito.");
             }
 
