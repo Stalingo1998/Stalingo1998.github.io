@@ -60,7 +60,7 @@
     </style>
     <body>
     <div class="contenedor">
-    <h2>FORMULARIO DEL DUEÑO DE LA MOTO</h2>
+    <h2>FORMULARIO DE UNA PERSONA</h2>
 
         <form id="crud-form">
             <label for="idOpciones">ID del Registro </label>
@@ -153,7 +153,7 @@
                     address: direccion,
                     telephone: telefono
                 };
-                update(ref(database, `brandongordon/${registroId}`), updates);
+                update(ref(database, brandongordon/${registroId}), updates);
                 console.log("Registro actualizado con éxito.");
             }
 
@@ -163,7 +163,7 @@
                     console.log("Por favor, ingresa un ID válido para eliminar el registro.");
                     return;
                 }
-                remove(ref(database, `brandongordon/${registroId}`));
+                remove(ref(database, brandongordon/${registroId}));
                 console.log("Registro eliminado con éxito.");
             }
 
