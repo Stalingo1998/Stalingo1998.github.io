@@ -60,7 +60,7 @@
     </style>
     <body>
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSONA</h2>
+    <h2>FORMULARIO DE UNA PERSONAAAAAAAAAA</h2>
 
         <form id="crud-form">
             <label for="idOpciones">ID del Registro </label>
@@ -125,9 +125,39 @@
 
             window.leerRegistro = function () {
             const databaseRef = ref(database, 'brandongordon');
+            const tablaRegistros = document.getElementById('tablaRegistros');
+            const tbody = tablaRegistros.querySelector('tbody');
+
             onValue(databaseRef, (snapshot) => {
                 const data = snapshot.val();
-                console.log("Registros:", data);
+
+                // Limpiar la tabla antes de agregar los nuevos registros
+                tbody.innerHTML = '';
+
+                // Iterar sobre los registros y agregarlos a la tabla
+                for (const registroId in data) {
+                    const registro = data[registroId];
+                    const newRow = tbody.insertRow();
+
+                    // Crear celdas y agregar datos
+                    const idCell = newRow.insertCell(0);
+                    idCell.textContent = registroId;
+
+                    const nombreCell = newRow.insertCell(1);
+                    nombreCell.textContent = registro.name;
+
+                    const apellidoCell = newRow.insertCell(2);
+                    apellidoCell.textContent = registro.lastname;
+
+                    const edadCell = newRow.insertCell(3);
+                    edadCell.textContent = registro.age;
+
+                    const direccionCell = newRow.insertCell(4);
+                    direccionCell.textContent = registro.address;
+
+                    const telefonoCell = newRow.insertCell(5);
+                    telefonoCell.textContent = registro.telephone;
+                }
             });
         }
             
