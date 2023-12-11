@@ -60,7 +60,7 @@
     </style>
     <body>
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSONAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h2>
+    <h2>FORMULARIO DE UNA PERSONA</h2>
 
         <form id="crud-form">
             <label for="idOpciones">ID del Registro </label>
@@ -91,14 +91,15 @@
 
             // Your web app's Firebase configuration
             const firebaseConfig = {
-              apiKey: "AIzaSyAn-VXbwUJGCA-uW33pgGtiEFi_mRWLCBI",
-              authDomain: "conexion-9d3d9.firebaseapp.com",
-              databaseURL: "https://conexion-9d3d9-default-rtdb.firebaseio.com",
-              projectId: "conexion-9d3d9",
-              storageBucket: "conexion-9d3d9.appspot.com",
-              messagingSenderId: "256484814322",
-              appId: "1:256484814322:web:da71d0cad7c68aff1b8f6b"
-            };
+                apiKey: "AIzaSyDRmHSHN1v5yCTgQRiP-u_zXVpg2S8HkeY",
+                authDomain: "septimo-utc.firebaseapp.com",
+                databaseURL: "https://septimo-utc-default-rtdb.firebaseio.com",
+                projectId: "septimo-utc",
+                storageBucket: "septimo-utc.appspot.com",
+                messagingSenderId: "992144357930",
+                appId: "1:992144357930:web:f5fde41131d4504c8ca153"
+                };
+
 
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
@@ -111,7 +112,7 @@
                 const telefono = document.getElementById("telefono").value;
                 console.log(nombre, apellido, edad, direccion, telefono);
                 push(
-                    ref(database, 'septimo'),
+                    ref(database, 'brandongordon'),
                     {
                         name: nombre,
                         lastname: apellido,
@@ -123,7 +124,7 @@
             }
 
             window.leerRegistro = function () {
-            const databaseRef = ref(database, 'septimo');
+            const databaseRef = ref(database, 'brandongordon');
             onValue(databaseRef, (snapshot) => {
                 const data = snapshot.val();
                 console.log("Registros:", data);
@@ -151,7 +152,7 @@
             address: direccion,
             telephone: telefono
             };
-            update(ref(database, `septimo/${registroId}`), updates);
+            update(ref(database, `brandongordon/${registroId}`), updates);
             console.log("Registro actualizado con éxito.");
         }
 
@@ -161,7 +162,7 @@
             console.log("Por favor, ingresa un ID válido para eliminar el registro.");
             return;
             }
-            remove(ref(database, `septimo/${registroId}`));
+            remove(ref(database, `brandongordon/${registroId}`));
             console.log("Registro eliminado con éxito.");
         }
 
