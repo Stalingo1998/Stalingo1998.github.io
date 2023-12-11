@@ -60,7 +60,7 @@
     </style>
     <body>
     <div class="contenedor">
-    <h2>FORMULARIO DE UNA PERSONAAAAAAAAAA</h2>
+    <h2>FORMULARIO DE UNA PER</h2>
 
         <form id="crud-form">
             <label for="idOpciones">ID del Registro </label>
@@ -80,7 +80,27 @@
             <button type="button" onclick="actualizarRegistro()">Actualizar</button>
             <button type="button" onclick="eliminarRegistro()">Eliminar</button>
         </form>
-</div>
+
+            <!-- Tabla para mostrar los registros -->
+        <table id="tablaRegistros">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los registros se agregarán aquí dinámicamente desde JavaScript -->
+            </tbody>
+        </table>
+    
+
+
+    </div>
 
         <script type="module">
             // Import the functions you need from the SDKs you need
@@ -196,7 +216,10 @@
             console.log("Registro eliminado con éxito.");
         }
 
-
+        // Llamar a leerRegistro después de que el documento HTML se haya cargado completamente
+        document.addEventListener("DOMContentLoaded", function () {
+            leerRegistro();
+        });
           </script>
     </body>
 </html>
