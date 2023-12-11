@@ -54,21 +54,15 @@
             border: none;
             border-radius: 5px;
         }
-
         button:hover {
             background-color: #45a049; /* Darker green on hover */
         }
     </style>
     <body>
-
-
     <div class="contenedor">
     <h2>FORMULARIO DE UNA PERSONA</h2>
 
-
-    <form id="crud-form">
-
-
+        <form id="crud-form">
             <label for="idOpciones">ID del Registro </label>
             <input type="text" id="idOpciones">
             <label for="nombre">Nombre:</label>
@@ -85,10 +79,7 @@
             <button type="button" onclick="leerRegistro()">Leer</button>
             <button type="button" onclick="actualizarRegistro()">Actualizar</button>
             <button type="button" onclick="eliminarRegistro()">Eliminar</button>
-            
         </form>
-
-
 </div>
 
         <script type="module">
@@ -112,7 +103,6 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const database = getDatabase(app);
-
             window.crearRegistro = function () {
                 const nombre = document.getElementById("nombre").value;
                 const apellido = document.getElementById("apellido").value;
@@ -120,7 +110,6 @@
                 const direccion = document.getElementById("direccion").value;
                 const telefono = document.getElementById("telefono").value;
                 console.log(nombre, apellido, edad, direccion, telefono);
-                
                 push(
                     ref(database, 'septimo'),
                     {
@@ -131,21 +120,15 @@
                         telephone:telefono
                     }
                 );
-
             }
-
-
 
             window.leerRegistro = function () {
             const databaseRef = ref(database, 'septimo');
             onValue(databaseRef, (snapshot) => {
                 const data = snapshot.val();
                 console.log("Registros:", data);
-                // Aquí puedes realizar acciones con los datos, como actualizar la interfaz de usuario
             });
         }
-
-
             
             window.actualizarRegistro = function () {
                 const registroId = document.getElementById("idOpciones").value;
@@ -168,12 +151,9 @@
                     address: direccion,
                     telephone: telefono
                 };
-
                 update(ref(database, `septimo/${registroId}`), updates);
                 console.log("Registro actualizado con éxito.");
             }
-
-
 
             window.eliminarRegistro = function () {
                 const registroId = document.getElementById("idOpciones").value;
@@ -184,8 +164,6 @@
                 remove(ref(database, `septimo/${registroId}`));
                 console.log("Registro eliminado con éxito.");
             }
-
-
 
           </script>
     </body>
