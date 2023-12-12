@@ -96,7 +96,7 @@
     </style>
     <body>
     <div class="contenedor">
-    <h2>FORMULARIO RECEPCION DE MOTOSSSSSSSSSSSS</h2>
+    <h2>FORMULARIO RECEPCION DE MOTO</h2>
 
         <form id="crud-form">
             <label for="idOpciones">ID del Registro </label>
@@ -203,44 +203,59 @@
             }
 
             window.leerRegistro = function () {
-            const databaseRef = ref(database, 'brandongordon');
-            const tablaRegistros = document.getElementById('tablaRegistros');
-            const tbody = tablaRegistros.querySelector('tbody');
+    const databaseRef = ref(database, 'brandongordon');
+    const tablaRegistros = document.getElementById('tablaRegistros');
+    const tbody = tablaRegistros.querySelector('tbody');
 
-            onValue(databaseRef, (snapshot) => {
-                const data = snapshot.val();
+    onValue(databaseRef, (snapshot) => {
+        const data = snapshot.val();
 
-                // Limpiar la tabla antes de agregar los nuevos registros
-                tbody.innerHTML = '';
+        // Limpiar la tabla antes de agregar los nuevos registros
+        tbody.innerHTML = '';
 
-                // Iterar sobre los registros y agregarlos a la tabla
-                for (const registroId in data) {
-                    const registro = data[registroId];
-                    const newRow = tbody.insertRow();
+        // Iterar sobre los registros y agregarlos a la tabla
+        for (const registroId in data) {
+            const registro = data[registroId];
+            const newRow = tbody.insertRow();
 
-                    // Crear celdas y agregar datos
-                    const idCell = newRow.insertCell(0);
-                    idCell.textContent = registroId;
+            // Crear celdas y agregar datos
+            const idCell = newRow.insertCell(0);
+            idCell.textContent = registroId;
 
-                    const nombreCell = newRow.insertCell(1);
-                    nombreCell.textContent = registro.name;
+            const nombreCell = newRow.insertCell(1);
+            nombreCell.textContent = registro.name;
 
-                    const apellidoCell = newRow.insertCell(2);
-                    apellidoCell.textContent = registro.lastname;
+            const apellidoCell = newRow.insertCell(2);
+            apellidoCell.textContent = registro.lastname;
 
-                    const edadCell = newRow.insertCell(3);
-                    edadCell.textContent = registro.age;
+            const edadCell = newRow.insertCell(3);
+            edadCell.textContent = registro.age;
 
-                    const direccionCell = newRow.insertCell(4);
-                    direccionCell.textContent = registro.address;
+            const direccionCell = newRow.insertCell(4);
+            direccionCell.textContent = registro.address;
 
-                    const telefonoCell = newRow.insertCell(5);
-                    telefonoCell.textContent = registro.telephone;
-                }
-                // Mostrar la tabla después de leer los registros
-                tablaRegistros.style.display = 'table';
+            const telefonoCell = newRow.insertCell(5);
+            telefonoCell.textContent = registro.telephone;
+
+            // Agregar evento de clic a la fila
+            newRow.addEventListener('click', function () {
+                // Asignar datos del registro seleccionado a los campos del formulario
+                document.getElementById("nombre").value = registro.name || "";
+                document.getElementById("apellido").value = registro.lastname || "";
+                document.getElementById("edad").value = registro.age || "";
+                document.getElementById("direccion").value = registro.address || "";
+                document.getElementById("telefono").value = registro.telephone || "";
             });
         }
+
+        // Mostrar la tabla después de leer los registros
+        tablaRegistros.style.display = 'table';
+    });
+}
+
+
+
+
             
             window.actualizarRegistro = function () {
             const registroId = document.getElementById("idOpciones").value;
