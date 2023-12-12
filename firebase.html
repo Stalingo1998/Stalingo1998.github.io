@@ -280,6 +280,16 @@
             };
             update(ref(database, `brandongordon/${registroId}`), updates);
             console.log("Registro actualizado con éxito.");
+            limpiarCampos();
+
+
+                function limpiarCampos() {
+                    document.getElementById("nombre").value = "";
+                    document.getElementById("apellido").value = "";
+                    document.getElementById("edad").value = "";
+                    document.getElementById("direccion").value = "";
+                    document.getElementById("telefono").value = "";
+                }
         }
 
         window.eliminarRegistro = function () {
@@ -290,12 +300,24 @@
             }
             remove(ref(database, `brandongordon/${registroId}`));
             console.log("Registro eliminado con éxito.");
+            limpiarCampos();
+
+
+                function limpiarCampos() {
+                    document.getElementById("nombre").value = "";
+                    document.getElementById("apellido").value = "";
+                    document.getElementById("edad").value = "";
+                    document.getElementById("direccion").value = "";
+                    document.getElementById("telefono").value = "";
+                }
         }
 
         // Llamar a leerRegistro después de que el documento HTML se haya cargado completamente
         document.addEventListener("DOMContentLoaded", function () {
             leerRegistro();
         });
+
+
           </script>
     </body>
 </html>
