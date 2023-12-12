@@ -96,7 +96,7 @@
     </style>
     <body>
     <div class="contenedor">
-    <h2>FORMULARIO RECEPCION DE MOTOS</h2>
+    <h2>FORMULARIO RECEPCION DE MOTOSSSSSSSSSSSS</h2>
 
         <form id="crud-form">
             <label for="idOpciones">ID del Registro </label>
@@ -191,6 +191,15 @@
                     }
                 );
                 limpiarCampos();
+
+
+                function limpiarCampos() {
+                    document.getElementById("nombre").value = "";
+                    document.getElementById("apellido").value = "";
+                    document.getElementById("edad").value = "";
+                    document.getElementById("direccion").value = "";
+                    document.getElementById("telefono").value = "";
+                }
             }
 
             window.leerRegistro = function () {
