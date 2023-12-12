@@ -96,7 +96,7 @@
     </style>
     <body>
     <div class="contenedor">
-    <h2>FORMULARIO RECEPCION DE MOTO</h2>
+    <h2>FORMULARIO RECEPCION DE MOTOSSSSSSS</h2>
 
         <form id="crud-form">
             <label for="idOpciones">ID del Registro </label>
@@ -194,6 +194,7 @@
 
 
                 function limpiarCampos() {
+                    document.getElementById("idOpciones").value = "";
                     document.getElementById("nombre").value = "";
                     document.getElementById("apellido").value = "";
                     document.getElementById("edad").value = "";
@@ -240,6 +241,7 @@
             // Agregar evento de clic a la fila
             newRow.addEventListener('click', function () {
                 // Asignar datos del registro seleccionado a los campos del formulario
+                document.getElementById("idOpciones").value = "";
                 document.getElementById("nombre").value = registro.name || "";
                 document.getElementById("apellido").value = registro.lastname || "";
                 document.getElementById("edad").value = registro.age || "";
@@ -284,6 +286,7 @@
 
 
                 function limpiarCampos() {
+                    document.getElementById("idOpciones").value = "";
                     document.getElementById("nombre").value = "";
                     document.getElementById("apellido").value = "";
                     document.getElementById("edad").value = "";
@@ -304,6 +307,7 @@
 
 
                 function limpiarCampos() {
+                    document.getElementById("idOpciones").value = "";
                     document.getElementById("nombre").value = "";
                     document.getElementById("apellido").value = "";
                     document.getElementById("edad").value = "";
