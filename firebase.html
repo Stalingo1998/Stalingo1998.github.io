@@ -157,7 +157,7 @@
             import { getDatabase, ref, push, onValue, remove, update } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
-
+            
             // Your web app's Firebase configuration
             const firebaseConfig = {
                 apiKey: "AIzaSyBMJsVpnbOwVOiVNbTZScZdet9qlGigDL0",
@@ -202,7 +202,6 @@
                     document.getElementById("telefono").value = "";
                 }
             }
-
             window.leerRegistro = function () {
     const databaseRef = ref(database, 'brandongordon');
     const tablaRegistros = document.getElementById('tablaRegistros');
@@ -248,17 +247,12 @@
                 document.getElementById("direccion").value = registro.address || "";
                 document.getElementById("telefono").value = registro.telephone || "";
             });
-        }
+        } HEAD
 
         // Mostrar la tabla después de leer los registros
         tablaRegistros.style.display = 'table';
     });
 }
-
-
-
-
-            
             window.actualizarRegistro = function () {
             const registroId = document.getElementById("idOpciones").value;
 
@@ -272,6 +266,23 @@
             const edad = document.getElementById("edad").value;
             const direccion = document.getElementById("direccion").value;
             const telefono = document.getElementById("telefono").value;
+
+HEAD
+                const updates = {
+                    name: nombre,
+                    lastname: apellido,
+                    age: edad,
+                    address: direccion,
+                    telephone: telefono
+                };
+                update(ref(database, `septimo/${registroId}`), updates);
+                console.log("Registro actualizado con éxito.");
+            }
+            window.eliminarRegistro = function () {
+                const registroId = document.getElementById("idOpciones").value;
+                if (!registroId) {
+                    console.log("Por favor, ingresa un ID válido para eliminar el registro.");
+                    return;
 
             const updates = {
             name: nombre,
@@ -292,6 +303,7 @@
                     document.getElementById("edad").value = "";
                     document.getElementById("direccion").value = "";
                     document.getElementById("telefono").value = "";
+
                 }
         }
 
@@ -301,6 +313,8 @@
             console.log("Por favor, ingresa un ID válido para eliminar el registro.");
             return;
             }
+HEAD
+
             remove(ref(database, `brandongordon/${registroId}`));
             console.log("Registro eliminado con éxito.");
             limpiarCampos();
@@ -320,8 +334,10 @@
         document.addEventListener("DOMContentLoaded", function () {
             leerRegistro();
         });
-
-
+    }
           </script>
+        
+        
     </body>
+
 </html>
